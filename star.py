@@ -1,4 +1,4 @@
-from turtle import *
+
 def star():
     for y in range(30, -30, -1):
         for x in range(-30, 30, 1):
