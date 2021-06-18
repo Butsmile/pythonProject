@@ -14,9 +14,8 @@ def paint_axis():
     tu.pendown()
     tu.fd(761)
 
-
-#初始设置
 def paint_init():
+    #初始设置
     #画布
     tu.screensize(800, 600, "white")
     tu.setup(0.3, 0.3)
@@ -27,8 +26,11 @@ def paint_init():
     tu.shape("turtle")
     tu.hideturtle()
 
-#脸
-def face():
+def funny():
+    #初始化
+    paint_init()
+    # paint_axis()
+    #脸
     tu.penup()
     tu.goto(0, -150)
     tu.pencolor("brown")
@@ -39,17 +41,7 @@ def face():
     tu.circle(150)
     tu.end_fill()
 
-#嘴巴
-def mouth():
-    tu.penup()
-    tu.goto(-120, -20)
-    tu.pencolor("brown")
-    tu.setheading(270)
-    tu.pendown()
-    tu.circle(120, 180)#半径为正数时，圆心在右边画圆，负数左边画圆
-
-#眼眶
-def orbits():
+    #眼眶
     tu.pencolor("brown")
     #左眼眶
     tu.penup()
@@ -82,8 +74,7 @@ def orbits():
     tu.fd(30)
     tu.end_fill()
 
-#眼珠
-def eyeballs():
+    #眼珠
     #左眼珠
     tu.penup()
     tu.goto(-105, 20)
@@ -104,12 +95,14 @@ def eyeballs():
     tu.circle(14)
     tu.end_fill()
 
-#run field
-paint_init()
-#paint_axis()
-face()
-orbits()
-eyeballs()
-mouth()
-tu.done()
+    # 嘴巴
+    tu.penup()
+    tu.goto(-120, -20)
+    tu.pencolor("brown")
+    tu.setheading(270)
+    tu.pendown()
+    tu.circle(120, 180)  # 半径为正数时，圆心在右边画圆，负数左边画圆
+
+    tu.done()
+
 
