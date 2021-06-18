@@ -1,5 +1,6 @@
 # coding:utf-8
 import turtle as tu
+import time as ti
 #绘制一个滑稽
 #绘制坐标线
 def paint_axis():
@@ -18,15 +19,15 @@ def paint_init():
     #初始设置
     #画布
     tu.screensize(800, 600, "white")
-    tu.setup(0.3, 0.3)
+    tu.setup(0.5, 0.5)
     # 画笔
     tu.pensize(3)
     tu.pencolor("brown")
-    tu.speed(10)
+    #tu.speed(10)
     tu.shape("turtle")
     tu.hideturtle()
 
-def funny():
+def funny(eyedir="left"):
     #初始化
     paint_init()
     # paint_axis()
@@ -77,7 +78,10 @@ def funny():
     #眼珠
     #左眼珠
     tu.penup()
-    tu.goto(-105, 20)
+    if eyedir == "left":
+        tu.goto(-105, 20)
+    else:
+        tu.goto(-35, 20)
     tu.fillcolor("black")
     tu.setheading(0)
     tu.down()
@@ -87,7 +91,10 @@ def funny():
 
     #右眼珠
     tu.penup()
-    tu.goto(35, 20)
+    if eyedir == "left":
+        tu.goto(35, 20)
+    else:
+        tu.goto(105, 20)
     tu.fillcolor("black")
     tu.setheading(0)
     tu.down()
@@ -103,6 +110,21 @@ def funny():
     tu.pendown()
     tu.circle(120, 180)  # 半径为正数时，圆心在右边画圆，负数左边画圆
 
-    tu.done()
+    tu.delay(500)
+
+def funny_gif():
+    tu.tracer(0)#瞬间完成绘制，不显示绘过程
+    for ind in range(1, 20, 1):
+        if ind % 2:
+            funny("left")
+        else:
+            funny("right")
+        ti.sleep(1)
+
+#test
+funny()
+funny_gif()
+
+
 
 
