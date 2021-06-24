@@ -121,9 +121,9 @@ def funny_gif():
             funny("right")
         ti.sleep(1)
 
-#test
-funny()
-funny_gif()
+if __name__ == "__main__":
+    funny()
+    funny_gif()
 
 
 
